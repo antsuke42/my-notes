@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>My Notes</title>
+    <link rel="stylesheet" href="notes.css" />
+  </head>
 
-<head>
-  <title>My Notes</title>
-  <link rel="stylesheet" href="notes.css">
-</head>
+  <body id="body">
+    <textarea
+      class="blur"
+      id="textarea"
+      placeholder="Type your notes here."
+    ></textarea>
+    <div style="color: red;">
+      pasd
+    </div>
 
-<body>
-  <textarea class="blur" id="textarea" placeholder="Type your notes here."></textarea>
+    <div class="hide" id="menu">
+      <ul>
+        <li>
+          <input id="newpage" value="New page" type="button" />
+        </li>
+        <li>
+          <input id="clearPage" value="Clear page" type="button" />
+        </li>
+      </ul>
+    </div>
+  </body>
   <script src="notes.js"></script>
-</body>
-
 </html>
