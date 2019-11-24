@@ -6,22 +6,49 @@
   </head>
 
   <body id="body">
-    <textarea
-      class="blur"
-      id="textarea"
-      placeholder="Type your notes here."
-    ></textarea>
-    <div style="color: red;">
-      pasd
+    <div id="left">
+      <textarea
+        disabled
+        autofocus
+        class="blur"
+        id="textarea"
+        placeholder="Type your notes here."
+      ></textarea>
     </div>
-
+    <div id="right">
+      <ul id="list">
+        <li id="settingsList">
+          <input class="button" id="newpage" value="New page" type="button" />
+        </li>
+      </ul>
+      <ul id="pagesList"></ul>
+    </div>
     <div class="hide" id="menu">
+      <p class="menuHeader">
+        Selected page: <p id="selectedPage" class="selectedPage"></p>
+      </p>
       <ul>
         <li>
-          <input id="newpage" value="New page" type="button" />
+          <input
+            class="menuButton"
+            id="clearPage"
+            value="Clear page"
+            type="button"
+          />
         </li>
         <li>
-          <input id="clearPage" value="Clear page" type="button" />
+          <input
+            class="menuButton"
+            id="deletePage"
+            value="Delete page"
+            type="button"
+          />
+        </li>
+        <li>
+          <input class="menuButton" id="settings" value="Settings" type="button" />
+        </li>
+        <li>
+          <input class="menuButton" id="blurPage" value="Blur page" type="button" />
         </li>
       </ul>
     </div>
