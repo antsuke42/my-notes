@@ -9,7 +9,11 @@ const deletePage = document.getElementById("deletePage");
 // Get notes from storage
 chrome.storage.sync.get(["mynotes"], data => {
   console.log(data);
+
   var result = data;
+  if (! result) {
+    result = {};
+  };
   var selectedPage = "";
   try {
     var current_page = Object.keys(result.mynotes)[0];
