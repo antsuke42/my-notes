@@ -8,12 +8,19 @@ const deletePage = document.getElementById("deletePage");
 
 // Get notes from storage
 chrome.storage.sync.get(["mynotes"], data => {
-  console.log(data)
+  console.log(data);
   var result = data;
   var selectedPage = "";
-  var current_page = Object.keys(result.mynotes)[0];
+  try {
+    var current_page = Object.keys(result.mynotes)[0];
+  } catch (error) {
+    addNewPage();
+    textarea.value = "";
+    var current_page = Object.keys(result.mynotes)[0];
+  }
 
-  if(result.mynotes[current_page] && result.mynotes[current_page].value == "") toggleEditable();
+  if (result.mynotes[current_page] && result.mynotes[current_page].value == "")
+    toggleEditable();
 
   // If there is no saved notes, create empty page
   if (result.mynotes[current_page]) {
