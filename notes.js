@@ -76,7 +76,6 @@ chrome.storage.sync.get(["mynotes"], data => {
   // Hotkey to blur/unblur
   document.onkeyup = function(e) {
     if (e.ctrlKey && e.which == 81) {
-      document.getElementById("textarea").classList.toggle("blur");
       toggleEditable();
     }
   };
@@ -173,7 +172,6 @@ chrome.storage.sync.get(["mynotes"], data => {
 
   document.getElementById("blurPage").addEventListener("click", function(e) {
     e.preventDefault();
-    document.getElementById("textarea").classList.toggle("blur");
     toggleEditable();
   });
 
